@@ -22,11 +22,16 @@ find "$1" -iname "*jpg" -name "*_*" | \
 		BASEFILENAME=$(basename "$FILE")
 		echo $FILE 
 		echo "$DEST"/$BASEFILENAME
+		CLOTHINGSIZE=$(echo $BASEFILENAME | awk -F'[_.]' '{print $(NF-1)}');
+		echo $CLOTHINGSIZE;
+		SECONDLABEL=$STYLENAME;
+		[[ !  -z  $CLOTHINGSIZE  ]] && SECONDLABEL+=" - $CLOTHINGSIZE"
+		echo $SECONDLABEL
 		width=`identify -format %w "$FILE"`; \
 		convert "$FILE" \
 		-fill $COLOR -font $FONT  -pointsize 50 \
 		-gravity northwest -annotate +50+30 'LuLaRoe Lauren Nicolaides' \
 		-fill $COLOR -font $FONT  -pointsize 80 \
-		-gravity northwest -annotate +50+90 "$STYLENAME" \
+		-gravity northwest -annotate +50+90 "$SECONDLABEL" \
 		"$DEST"/"$BASEFILENAME"
   done
