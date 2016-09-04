@@ -38,3 +38,11 @@ find "$1" -iname "*jpg" -name "*_*" | \
 		-gravity southwest -annotate +50+100 "$SECONDLABEL" \
 		"$DEST"/"$BASEFILENAME"
   done
+find "$1" -iname "*jpg" -not -name "*_*" | \
+	while read FILE; do
+		echo $FILE;
+		BASEFILENAME=$(basename "$FILE")
+		DEST=$(dirname "$FILE")"_export"
+		[ -d "$DEST" ] || mkdir "$DEST"
+		cp -rv "$FILE" "$DEST"/"$BASEFILENAME"
+	done
