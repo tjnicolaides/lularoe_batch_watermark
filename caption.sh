@@ -31,10 +31,10 @@ find "$1" -iname "*jpg" -name "*_*" | \
 		overlayPosition="$((height - 250))";
 
 		convert "$FILE" \
-		-fill '#0008' -draw 'rectangle 0,'$overlayPosition','$width','$height \
+		-fill '#0006' -draw 'rectangle 0,'$overlayPosition','$width','$height \
 		-fill $COLOR -font $FONT  -pointsize 50 \
-		-gravity southwest -annotate +225+40 'LuLaRoe Lauren Nicolaides' \
+		-gravity southwest -annotate +50+40 'LuLaRoe Lauren Nicolaides' \
 		-fill $COLOR -font $FONT  -pointsize 120 \
-		-gravity southwest -annotate +225+100 "$SECONDLABEL" \
+		-gravity southwest -annotate +50+100 "$SECONDLABEL" \
 		"$DEST"/"$BASEFILENAME"
   done
