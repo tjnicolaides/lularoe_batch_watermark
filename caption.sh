@@ -17,7 +17,7 @@ STYLENAME="$(basename "$1")"
 
 [ -d "$DEST" ] || mkdir "$DEST"
 
-find "$1" -iname "*jpg" | \
+find "$1" -iname "*jpg" -name "*_*" | \
 	while read FILE; do
 		BASEFILENAME=$(basename "$FILE")
 		echo $FILE 
