@@ -10,8 +10,10 @@ if [ -z "$2" ]
     echo "No destination supplied"
     exit 1
 fi
-
 DEST="$2"
+
+[ -d "$DEST" ] || mkdir "$DEST"
+
 
  find "$1" -iname "*jpg" | \
   while read FILE; do
@@ -22,8 +24,6 @@ DEST="$2"
 convert \
 -resize 50x50 \
 "$FILE" "$DEST"/"$BASEFILENAME"
-# echo "$DEST"/`basename "$I"`
-# echo `basename "$I"`;
   done
 
 # do
