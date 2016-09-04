@@ -5,7 +5,7 @@ if [ -z "$1" ]
     exit 1
 fi
 
-COLOR="rgba(0,0,0,0.5)"
+COLOR="rgba(255,255,255,1)"
 FONT="/System/Library/Fonts/HelveticaNeue.dfont"
 
 
@@ -25,12 +25,16 @@ find "$1" -iname "*jpg" -name "*_*" | \
 		SECONDLABEL=$STYLENAME;
 		[[ !  -z  $CLOTHINGSIZE  ]] && SECONDLABEL+=" - $CLOTHINGSIZE"
 
-		
+
 		width=`identify -format %w "$FILE"`; \
+		height=`identify -format %h "$FILE"`; \
+		overlayPosition="$((height - 250))";
+
 		convert "$FILE" \
+		-fill '#0008' -draw 'rectangle 0,'$overlayPosition','$width','$height \
 		-fill $COLOR -font $FONT  -pointsize 50 \
-		-gravity northwest -annotate +50+30 'LuLaRoe Lauren Nicolaides' \
-		-fill $COLOR -font $FONT  -pointsize 80 \
-		-gravity northwest -annotate +50+90 "$SECONDLABEL" \
+		-gravity southwest -annotate +225+40 'LuLaRoe Lauren Nicolaides' \
+		-fill $COLOR -font $FONT  -pointsize 120 \
+		-gravity southwest -annotate +225+100 "$SECONDLABEL" \
 		"$DEST"/"$BASEFILENAME"
   done
