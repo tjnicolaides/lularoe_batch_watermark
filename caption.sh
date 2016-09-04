@@ -21,9 +21,13 @@ DEST="$2"
   	echo $FILE;
   	echo "$DEST"/$BASEFILENAME
    #cp -v --parent "$I" /backup/dir/
-convert \
--resize 50x50 \
-"$FILE" "$DEST"/"$BASEFILENAME"
+   width=`identify -format %w "$FILE"`; \
+convert "$FILE" \
+-fill "rgba(0,0,0,0.35)" -stroke "rgba(0,0,0,0.35)" -font "/System/Library/Fonts/HelveticaNeue.dfont"  -pointsize 50 \
+-gravity northwest -annotate +50+25 'LuLaRoe Lauren Nicolaides' \
+-fill "rgba(0,0,0,0.35)" -stroke "rgba(0,0,0,0.35)" -font "/System/Library/Fonts/HelveticaNeue.dfont"  -pointsize 80 \
+-gravity northwest -annotate +50+90 'Second Line' \
+ "$DEST"/"$BASEFILENAME"
   done
 
 # do
