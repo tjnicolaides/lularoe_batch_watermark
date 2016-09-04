@@ -13,6 +13,7 @@ fi
 DEST="$2"
 COLOR="rgba(0,0,0,0.5)"
 FONT="/System/Library/Fonts/HelveticaNeue.dfont"
+STYLENAME="$(basename "$1")"
 
 [ -d "$DEST" ] || mkdir "$DEST"
 
@@ -26,6 +27,6 @@ find "$1" -iname "*jpg" | \
 		-fill $COLOR -font $FONT  -pointsize 50 \
 		-gravity northwest -annotate +50+30 'LuLaRoe Lauren Nicolaides' \
 		-fill $COLOR -font $FONT  -pointsize 80 \
-		-gravity northwest -annotate +50+90 'Second Line' \
+		-gravity northwest -annotate +50+90 "$STYLENAME" \
 		"$DEST"/"$BASEFILENAME"
   done
