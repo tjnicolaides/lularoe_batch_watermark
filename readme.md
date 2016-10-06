@@ -1,6 +1,6 @@
 <img src="images/logo.jpg" height="100" alt="LuLaRoe Logo">
 # LuLaRoe Image Watermarking Script
-A shell script for OS X or Linux users to easily apply watermarks to LuLaRoe promotional images in large batches. Apply nice-looking labels for your many LuLaRoe promotional images in just minutes. 
+A python script for OS X or Linux users to easily apply watermarks to LuLaRoe promotional images in large batches. Apply nice-looking labels for your many LuLaRoe promotional images in just minutes. 
 
 If this little script saves you lots of time, please consider swinging by [Lauren's LuLaRoe Facebook group](https://www.facebook.com/groups/LuLaRoeLaurenNicolaides/) and saying hi!
 
@@ -73,7 +73,7 @@ OverlayFillColor = (0,0,0,128)
 ```
 
 ### Font 
-Change the font by updating the following line in `caption.sh` to point at a font file installed on your computer, like:
+Change the font by updating the following line in `caption.py` to point at a font file installed on your computer, like:
 ```python
 fontLoc = os.path.normpath('C:\Windows\Fonts\Arial.ttf')  #Windows font location
 #fontLoc = 'usr/share/fonts/truetype/FreeSans.ttf'        #Linux font location (Debian)
