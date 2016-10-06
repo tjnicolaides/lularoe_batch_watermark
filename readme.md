@@ -7,25 +7,25 @@ If this little script saves you lots of time, please consider swinging by [Laure
 ## Usage
 Run the script from your terminal (on Mac or Linux), like this:
 
-``` python
+``` 
 ./caption.py -p ~/path/to/your/image/directory
 ```
 
 or
 
-``` python
+``` 
 ./caption.py --path=~/path/to/your/image/directory
 ```
 
 Run the script from the Command Prompt (on Windows), like this:
 
-``` python
+``` 
 /path/to/caption.py -p /path/to/your/image/directory
 ```
 
 or
 
-``` python
+``` 
 /path/to/caption.py --path=/path/to/your/image/directory
 ```
 
